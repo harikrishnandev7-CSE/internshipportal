@@ -8,12 +8,10 @@ import {
   Bookmark,
   Building2,
   Users,
-  Settings,
   ChevronLeft,
   ChevronRight,
   Plus,
   List,
-  ClipboardList,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 

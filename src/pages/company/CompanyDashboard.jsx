@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Briefcase, Users, CheckCircle, TrendingUp, ArrowRight, Plus, FileText, Activity } from 'lucide-react';
+import { Briefcase, Users, CheckCircle, ArrowRight, Plus, FileText, Activity } from 'lucide-react';
 import { internships, applications, applicants } from '../../data/dummyData';
 import { useAuth } from '../../hooks/useAuth';
 

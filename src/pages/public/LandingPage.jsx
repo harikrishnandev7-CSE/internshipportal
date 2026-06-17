@@ -3,7 +3,7 @@ import { Briefcase, ArrowRight, Users, Zap, Send, Building2, FileText, MessageSq
 import { features, statistics, testimonials } from '../../data/dummyData';
 import { useAuth } from '../../hooks/useAuth';
 
-const iconMap: Record<string, React.ReactNode> = {
+const iconMap = {
   Zap: <Zap className="w-6 h-6" />,
   Send: <Send className="w-6 h-6" />,
   Building2: <Building2 className="w-6 h-6" />,
@@ -12,7 +12,7 @@ const iconMap: Record<string, React.ReactNode> = {
   TrendingUp: <TrendingUp className="w-6 h-6" />,
 };
 
-const statIconMap: Record<string, React.ReactNode> = {
+const statIconMap = {
   Briefcase: <Briefcase className="w-6 h-6" />,
   Building2: <Building2 className="w-6 h-6" />,
   Users: <Users className="w-6 h-6" />,

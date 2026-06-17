@@ -1,15 +1,7 @@
 import { MapPin, Clock, DollarSign, Building2, Bookmark, BookmarkCheck } from 'lucide-react';
-import type { Internship } from '../../types';
 import { useNavigate } from 'react-router-dom';
 
-interface InternshipCardProps {
-  internship: Internship;
-  isSaved?: boolean;
-  onToggleSave?: () => void;
-  showActions?: boolean;
-}
-
-export function InternshipCard({ internship, isSaved, onToggleSave, showActions = true }: InternshipCardProps) {
+export function InternshipCard({ internship, isSaved, onToggleSave, showActions = true }) {
   const navigate = useNavigate();
 
   return (

@@ -9,12 +9,12 @@ export function CreateInternship() {
   const { user } = useAuth();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [skills, setSkills] = useState<string[]>([]);
+  const [skills, setSkills] = useState([]);
   const [skillInput, setSkillInput] = useState('');
   const [duration, setDuration] = useState('');
   const [stipend, setStipend] = useState('');
   const [location, setLocation] = useState('');
-  const [type, setType] = useState<'Remote' | 'On-site' | 'Hybrid'>('Remote');
+  const [type, setType] = useState('Remote');
   const [deadline, setDeadline] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -25,11 +25,11 @@ export function CreateInternship() {
     }
   };
 
-  const removeSkill = (skill: string) => {
+  const removeSkill = (skill) => {
     setSkills(skills.filter((s) => s !== skill));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newInternship = {
       id: `i${Date.now()}`,
@@ -142,7 +142,7 @@ export function CreateInternship() {
             </div>
             <div>
               <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">Type</label>
-              <select value={type} onChange={(e) => setType(e.target.value as 'Remote' | 'On-site' | 'Hybrid')} className="input-field" required>
+              <select value={type} onChange={(e) => setType(e.target.value)} className="input-field" required>
                 <option value="Remote">Remote</option>
                 <option value="On-site">On-site</option>
                 <option value="Hybrid">Hybrid</option>

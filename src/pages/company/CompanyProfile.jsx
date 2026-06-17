@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Building2, Globe, MapPin, Users, Calendar, Edit2, Check, X, FileText } from 'lucide-react';
+import { Building2, Globe, MapPin, Users, Calendar, Edit2, Check, X } from 'lucide-react';
 import { companyProfiles } from '../../data/dummyData';
 import { useAuth } from '../../hooks/useAuth';
 

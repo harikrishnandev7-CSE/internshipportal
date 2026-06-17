@@ -16,7 +16,7 @@ export function SavedInternships() {
       .filter(Boolean);
   }, [saved]);
 
-  const removeSaved = (id: string) => {
+  const removeSaved = (id) => {
     setSaved((prev) => prev.filter((sid) => sid !== id));
   };
 

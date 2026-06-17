@@ -1,10 +1,9 @@
 import { useState, useMemo } from 'react';
 import { SlidersHorizontal, X, MapPin, Clock, DollarSign, Building2 } from 'lucide-react';
-import { internships } from '../../data/dummyData';
+import { internships, savedInternships } from '../../data/dummyData';
 import { InternshipCard } from '../../components/common/InternshipCard';
 import { SearchBar } from '../../components/common/SearchBar';
 import { useAuth } from '../../hooks/useAuth';
-import { savedInternships } from '../../data/dummyData';
 
 export function InternshipListPage() {
   const { user } = useAuth();
@@ -15,7 +14,7 @@ export function InternshipListPage() {
     location: '',
     duration: '',
   });
-  const [saved, setSaved] = useState<string[]>(
+  const [saved, setSaved] = useState(() =>
     user ? savedInternships.filter(s => s.studentId === user.id).map(s => s.internshipId) : []
   );
 
@@ -33,7 +32,7 @@ export function InternshipListPage() {
     });
   }, [search, filters]);
 
-  const toggleSave = (id: string) => {
+  const toggleSave = (id) => {
     setSaved(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]);
   };
 

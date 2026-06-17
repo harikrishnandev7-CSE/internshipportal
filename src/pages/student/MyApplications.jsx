@@ -12,8 +12,8 @@ export function MyApplications() {
     [user]
   );
 
-  const statusFilter = ['All', 'Applied', 'Under Review', 'Shortlisted', 'Rejected', 'Selected'] as const;
-  const [filter, setFilter] = useState<string>('All');
+  const statusFilter = ['All', 'Applied', 'Under Review', 'Shortlisted', 'Rejected', 'Selected'];
+  const [filter, setFilter] = useState('All');
 
   const filtered = useMemo(() => {
     if (filter === 'All') return myApps;
@@ -87,5 +87,3 @@ export function MyApplications() {
     </div>
   );
 }
-
-

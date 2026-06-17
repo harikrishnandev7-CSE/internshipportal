@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Briefcase, ArrowRight, Edit2, Trash2, Eye, Plus, MapPin, Clock, DollarSign, CheckCircle } from 'lucide-react';
+import { Briefcase, ArrowRight, Edit2, Eye, Plus, MapPin, Clock, DollarSign, CheckCircle } from 'lucide-react';
 import { internships } from '../../data/dummyData';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -8,7 +8,7 @@ export function ManageInternships() {
   const { user } = useAuth();
   const [list, setList] = useState(() => internships.filter((i) => i.companyId === user?.id));
 
-  const toggleActive = (id: string) => {
+  const toggleActive = (id) => {
     setList((prev) => prev.map((i) => (i.id === id ? { ...i, isActive: !i.isActive } : i)));
   };
 

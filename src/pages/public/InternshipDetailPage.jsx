@@ -6,7 +6,7 @@ import { Modal } from '../../components/common/Modal';
 import { useAuth } from '../../hooks/useAuth';
 
 export function InternshipDetailPage() {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
   const internship = internships.find((i) => i.id === id);

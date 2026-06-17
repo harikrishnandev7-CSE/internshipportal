@@ -1,6 +1,4 @@
-import type { User, StudentProfile, CompanyProfile, Internship, Application, SavedInternship, Testimonial, Feature, Statistic, Applicant } from '../types';
-
-export const demoUsers: User[] = [
+export const demoUsers = [
   { id: 's1', name: 'Alex Johnson', email: 'student@demo.com', role: 'student', avatar: '' },
   { id: 's2', name: 'Sarah Chen', email: 'sarah.chen@demo.com', role: 'student', avatar: '' },
   { id: 's3', name: 'Michael Patel', email: 'michael.patel@demo.com', role: 'student', avatar: '' },
@@ -13,7 +11,7 @@ export const demoUsers: User[] = [
   { id: 'c5', name: 'CyberShield', email: 'cybershield@demo.com', role: 'company', avatar: '' },
 ];
 
-export const studentProfiles: StudentProfile[] = [
+export const studentProfiles = [
   {
     id: 'sp1',
     userId: 's1',
@@ -91,7 +89,7 @@ export const studentProfiles: StudentProfile[] = [
   },
 ];
 
-export const companyProfiles: CompanyProfile[] = [
+export const companyProfiles = [
   {
     id: 'cp1',
     userId: 'c1',
@@ -154,7 +152,7 @@ export const companyProfiles: CompanyProfile[] = [
   },
 ];
 
-export const internships: Internship[] = [
+export const internships = [
   {
     id: 'i1',
     companyId: 'c1',
@@ -361,7 +359,7 @@ export const internships: Internship[] = [
   },
 ];
 
-export const applications: Application[] = [
+export const applications = [
   {
     id: 'a1',
     studentId: 's1',
@@ -464,7 +462,7 @@ export const applications: Application[] = [
   },
 ];
 
-export const savedInternships: SavedInternship[] = [
+export const savedInternships = [
   { id: 'si1', studentId: 's1', internshipId: 'i2', savedDate: '2024-02-05' },
   { id: 'si2', studentId: 's1', internshipId: 'i4', savedDate: '2024-02-08' },
   { id: 'si3', studentId: 's1', internshipId: 'i8', savedDate: '2024-02-15' },
@@ -473,7 +471,7 @@ export const savedInternships: SavedInternship[] = [
   { id: 'si6', studentId: 's1', internshipId: 'i12', savedDate: '2024-03-01' },
 ];
 
-export const applicants: Applicant[] = [
+export const applicants = [
   {
     id: 'ap1',
     applicationId: 'a1',
@@ -536,7 +534,7 @@ export const applicants: Applicant[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
+export const testimonials = [
   {
     id: 't1',
     name: 'Jessica Martinez',
@@ -575,7 +573,7 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-export const features: Feature[] = [
+export const features = [
   {
     id: 'f1',
     title: 'Smart Matching',
@@ -614,7 +612,7 @@ export const features: Feature[] = [
   },
 ];
 
-export const statistics: Statistic[] = [
+export const statistics = [
   { label: 'Active Internships', value: '1,200+', icon: 'Briefcase' },
   { label: 'Companies Hiring', value: '500+', icon: 'Building2' },
   { label: 'Students Placed', value: '10,000+', icon: 'Users' },

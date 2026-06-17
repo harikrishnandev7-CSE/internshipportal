@@ -1,14 +1,6 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
-import type { User } from '../types';
+import { createContext, useContext, useState, useCallback } from 'react';
 
-interface AuthContextType {
-  user: User | null;
-  login: (email: string, password: string, role: 'student' | 'company') => boolean;
-  register: (name: string, email: string, password: string, role: 'student' | 'company') => boolean;
-  logout: () => void;
-}
-
-const DEMO_USERS: Record<string, { password: string; user: User }> = {
+const DEMO_USERS = {
   'student@demo.com': {
     password: 'password123',
     user: {
@@ -31,20 +23,20 @@ const DEMO_USERS: Record<string, { password: string; user: User }> = {
   },
 };
 
-const AuthContext = createContext<AuthContextType>({
+const AuthContext = createContext({
   user: null,
   login: () => false,
   register: () => false,
   logout: () => {},
 });
 
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(() => {
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(() => {
     const saved = localStorage.getItem('internx-user');
     return saved ? JSON.parse(saved) : null;
   });
 
-  const login = useCallback((email: string, password: string, role: 'student' | 'company') => {
+  const login = useCallback((email, password, role) => {
     const account = DEMO_USERS[email.toLowerCase()];
     if (account && account.password === password && account.user.role === role) {
       setUser(account.user);
@@ -54,10 +46,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return false;
   }, []);
 
-  const register = useCallback((name: string, email: string, password: string, role: 'student' | 'company') => {
+  const register = useCallback((name, email, password, role) => {
     const key = email.toLowerCase();
     if (DEMO_USERS[key]) return false;
-    const newUser: User = {
+    const newUser = {
       id: role === 'student' ? `s${Date.now()}` : `c${Date.now()}`,
       name,
       email: key,

@@ -5,7 +5,7 @@ import { applicants } from '../../data/dummyData';
 
 export function ApplicantsPage() {
   const [search, setSearch] = useState('');
-  const [statusFilter, setStatusFilter] = useState<string>('All');
+  const [statusFilter, setStatusFilter] = useState('All');
   const [applicantList, setApplicantList] = useState(applicants);
 
   const statusOptions = ['All', 'Applied', 'Under Review', 'Shortlisted', 'Rejected', 'Selected'];
@@ -20,8 +20,8 @@ export function ApplicantsPage() {
     return matchesSearch && matchesStatus;
   });
 
-  const updateStatus = (id: string, newStatus: string) => {
-    setApplicantList((prev) => prev.map((a) => (a.id === id ? { ...a, status: newStatus as typeof a.status } : a)));
+  const updateStatus = (id, newStatus) => {
+    setApplicantList((prev) => prev.map((a) => (a.id === id ? { ...a, status: newStatus } : a)));
   };
 
   return (
