@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, ArrowRight, Users, Zap, Send, Building2, FileText, MessageSquare, TrendingUp, Star } from 'lucide-react';
 import { features, statistics, testimonials } from '../../data/dummyData';
